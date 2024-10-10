@@ -34,41 +34,4 @@ table {
 th, td {
     border: 1px solid #e0e0e0;
     padding: 12px;
-    text-align: left;
-}
-
-th {
-    background-color: #4a90e2;
-    color: white;
-}
-
-td {
-    background-color: #f9f9f9;
-}
-
-td a {
-    color: #4a90e2;
-    text-decoration: none;
-}
-
-td a:hover {
-    text-decoration: underline;
-}
-
-.button-download {
-    background-color: #e67e22;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.button-download:hover {
-    background-color: #d35400;
-}
-
-.complementary-files {
-    margin: 10px 0;
-}
+    text-align:
