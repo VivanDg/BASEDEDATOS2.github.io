@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Asignar archivos PDF y complementarios directamente desde carpetas
     const pdfFiles = [
-        "C:/Game/BASE DE DATOS II/semanas/SEMANA_1/Actividad01.pdf", // Semana 1
+        "semanas/SEMANA_1.pdf/Actividad01.pdf", // Semana 1
         "ruta/a/tu/archivo2.pdf", // Semana 2
         "ruta/a/tu/archivo3.pdf", // Semana 3
         // ...continúa con los demás archivos PDF
