@@ -92,6 +92,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+// Funciones de descarga
 function downloadPDF(week) {
     const link = document.createElement("a");
     link.href = pdfFiles[week - 1];
@@ -107,3 +108,4 @@ function downloadComplementaryFiles(week) {
         link.click();
     });
 }
+
