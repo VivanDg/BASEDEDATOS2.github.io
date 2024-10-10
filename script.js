@@ -72,13 +72,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 <button class="button-download" onclick="downloadPDF(${week})">Descargar PDF</button>
             </td>
             <td>
-                <div id="complementaryFiles${week}" class="complementary-files"></div>
+                <div class="complementary-files" id="complementaryFiles${week}"></div>
                 <button class="button-download" onclick="downloadComplementaryFiles(${week})">Descargar Complementarios</button>
             </td>
         `;
 
         // Agregar archivos complementarios
-        const complementaryDiv = document.getElementById(`complementaryFiles${week}`);
+        const complementaryDiv = row.querySelector(`#complementaryFiles${week}`);
         complementaryFiles[week - 1].forEach(file => {
             const link = document.createElement("a");
             link.href = file;
