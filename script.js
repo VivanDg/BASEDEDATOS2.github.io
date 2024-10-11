@@ -68,8 +68,9 @@ document.addEventListener("DOMContentLoaded", function() {
             <td>Semana ${week}</td>
             <td>${descripciones[week - 1]}</td>
             <td>
-                <a href="${pdfFiles[week - 1]}" target="_blank">Ver PDF</a>
+                <button class="button-view" onclick="togglePDF(${week})">Ver PDF</button>
                 <button class="button-download" onclick="downloadPDF(${week})">Descargar PDF</button>
+                <iframe id="pdfFrame${week}" class="pdf-frame" style="display: none;" src=""></iframe>
             </td>
             <td>
                 <div class="complementary-files" id="complementaryFiles${week}"></div>
@@ -91,6 +92,20 @@ document.addEventListener("DOMContentLoaded", function() {
         tasksTable.appendChild(row);
     }
 });
+
+// Función para mostrar u ocultar el PDF
+function togglePDF(week) {
+    const pdfFrame = document.getElementById(`pdfFrame${week}`);
+    const pdfFile = pdfFiles[week - 1];
+
+    if (pdfFrame.style.display === "none") {
+        pdfFrame.src = pdfFile; // Establecer la fuente del iframe
+        pdfFrame.style.display = "block"; // Mostrar el iframe
+    } else {
+        pdfFrame.style.display = "none"; // Ocultar el iframe
+        pdfFrame.src = ""; // Limpiar la fuente del iframe
+    }
+}
 
 // Funciones de descarga
 function downloadPDF(week) {
