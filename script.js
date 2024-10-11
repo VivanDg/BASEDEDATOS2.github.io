@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Asignar archivos PDF y complementarios directamente desde carpetas
     const pdfFiles = [
         "semanas/SEMANA_1/Actividad01.pdf", // Semana 1
-        "semanas/SEMANA_2/Actividad02.pdf", // Semana 2
+        "semanas/SEMANA 2/Actividad 02.pdf", // Semana 2
         "semanas/SEMANA_3/Actividad03.pdf", // Semana 3
         "semanas/SEMANA_4/Actividad04.pdf", // Semana 4
         "semanas/SEMANA_5/Actividad05.pdf", // Semana 5
