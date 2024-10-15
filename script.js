@@ -15,12 +15,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Rutas relativas para cada PDF y archivo complementario
     const pdfFiles = [
-        "./semanas/SEMANA_1/Actividad_1.pdf",
-        "./semanas/SEMANA_2/Actividad_2.pdf",
-        "./semanas/SEMANA_3/Actividad_3.pdf",
-        "./semanas/SEMANA_4/Actividad_4.pdf",
-        "./semanas/SEMANA_5/Actividad_5.pdf",
-        "./semanas/SEMANA_6/Actividad_6.pdf",
+        "./semanas/SEMANA_1/Actividad1.pdf",
+        "./semanas/SEMANA_2/Actividad2.pdf",
+        "./semanas/SEMANA_3/Actividad3.pdf",
+        "./semanas/SEMANA_4/Actividad4.pdf",
+        "./semanas/SEMANA_5/Actividad5.pdf",
+        "./semanas/SEMANA_6/Actividad6.pdf",
         // Continúa con las rutas correctas para cada semana
     ];
 
