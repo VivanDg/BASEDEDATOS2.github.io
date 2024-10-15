@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function() {
         ["complementarios/complementario16.zip"]  // Complementarios de Semana 16
     ];
 
-     // Generación dinámica de las filas de la tabla
+    // Generar filas de la tabla para cada semana
     for (let week = 1; week <= 16; week++) {
         const row = document.createElement("tr");
 
@@ -68,9 +68,8 @@ document.addEventListener("DOMContentLoaded", function() {
             <td>Semana ${week}</td>
             <td>${descripciones[week - 1]}</td>
             <td>
-                <button class="button-view" onclick="togglePDF(${week})">Ver PDF</button>
+                <a href="${pdfFiles[week - 1]}" target="_blank">Ver PDF</a>
                 <button class="button-download" onclick="downloadPDF(${week})">Descargar PDF</button>
-                <iframe id="pdfFrame${week}" class="pdf-frame" style="display: none;" src=""></iframe>
             </td>
             <td>
                 <div class="complementary-files" id="complementaryFiles${week}"></div>
@@ -78,13 +77,13 @@ document.addEventListener("DOMContentLoaded", function() {
             </td>
         `;
 
-        // Añadir los complementarios
+        // Agregar archivos complementarios
         const complementaryDiv = row.querySelector(`#complementaryFiles${week}`);
-        complementaryFiles[week - 1]?.forEach(file => {
+        complementaryFiles[week - 1].forEach(file => {
             const link = document.createElement("a");
             link.href = file;
             link.target = "_blank";
-            link.textContent = file.split('/').pop();
+            link.textContent = file.split('/').pop(); // Muestra solo el nombre del archivo
             complementaryDiv.appendChild(link);
             complementaryDiv.appendChild(document.createElement("br"));
         });
@@ -93,39 +92,20 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-// Mostrar u ocultar el PDF
-function togglePDF(week) {
-    const pdfFrame = document.getElementById(`pdfFrame${week}`);
-    const pdfFile = pdfFiles[week - 1];
-
-    if (pdfFrame.style.display === "none") {
-        pdfFrame.src = pdfFile;
-        pdfFrame.style.display = "block";
-    } else {
-        pdfFrame.style.display = "none";
-        pdfFrame.src = "";
-    }
-}
-
-// Descargar PDF
+// Funciones de descarga
 function downloadPDF(week) {
     const link = document.createElement("a");
     link.href = pdfFiles[week - 1];
     link.download = `Semana_${week}.pdf`;
-    document.body.appendChild(link);
     link.click();
-    document.body.removeChild(link);
 }
 
-// Descargar complementarios
 function downloadComplementaryFiles(week) {
-    complementaryFiles[week - 1]?.forEach((file, index) => {
+    complementaryFiles[week - 1].forEach((file, index) => {
         const link = document.createElement("a");
         link.href = file;
         link.download = `Complementario_Semana_${week}_${index + 1}_${file.split('/').pop()}`;
-        document.body.appendChild(link);
         link.click();
-        document.body.removeChild(link);
     });
 }
 
