@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "Actividad 03: Modelo Lógico",
         "Actividad 04: Modelo Físico",
         "Actividad 05: Consultas básicas en SQL Server y PostgreSQL",
-        "Descripción de la tarea de la semana 6",
+        "Actividad 06: Consultas SQL",
         "Descripción de la tarea de la semana 7",
         // Continúa hasta la semana 16
     ];
