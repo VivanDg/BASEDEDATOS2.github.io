@@ -8,9 +8,9 @@ document.addEventListener("DOMContentLoaded", function() {
         "Actividad 03: Modelo Lógico",
         "Actividad 04: Modelo Físico",
         "Actividad 05: Consultas básicas en SQL Server y PostgreSQL",
-        "Actividad 06: Consultas SQL",
+        "Actividad 06: Consultas Avanzadas en SQL Server",
         "Descripción de la tarea de la semana 7",
-        // Continúa hasta la semana 16
+        
     ];
 
     // Rutas relativas para cada PDF y archivo complementario
@@ -21,12 +21,12 @@ document.addEventListener("DOMContentLoaded", function() {
         "./semanas/SEMANA_4/Actividad4.pdf",
         "./semanas/SEMANA_5/Actividad5.pdf",
         "./semanas/SEMANA_6/Actividad6.pdf",
-        // Continúa con las rutas correctas para cada semana
+        
     ];
 
     const complementaryFiles = [
         
-        // Continúa con las rutas correctas para cada archivo complementario
+        
     ];
 
     // Generar las filas de la tabla dinámicamente
