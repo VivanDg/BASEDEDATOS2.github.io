@@ -18,13 +18,14 @@ document.addEventListener("DOMContentLoaded", function() {
         "./semanas/SEMANA_1/Actividad01.pdf",
         "./semanas/SEMANA_2/Actividad02.pdf",
         "./semanas/SEMANA_3/Actividad03.pdf",
+        "./semanas/SEMANA_4/Actividad04.pdf",
+        "./semanas/SEMANA_5/Actividad05.pdf",
+        "./semanas/SEMANA_6/Actividad06.pdf",
         // Continúa con las rutas correctas para cada semana
     ];
 
     const complementaryFiles = [
-        ["./complementarios/complementario1.zip"],
-        ["./complementarios/complementario2.zip"],
-        ["./complementarios/complementario3.zip"],
+        
         // Continúa con las rutas correctas para cada archivo complementario
     ];
 
@@ -64,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
 function downloadPDF(week) {
     const link = document.createElement("a");
     link.href = pdfFiles[week - 1];
-    link.download = `Semana_${week}.pdf`;
+    link.download = `Actividad0${week}.pdf`;
     link.click();
 }
 
