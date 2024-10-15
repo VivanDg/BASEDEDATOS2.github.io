@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Asignar archivos PDF y complementarios directamente desde carpetas
     const pdfFiles = [
         "semanas/SEMANA_1/Actividad01.pdf", // Semana 1
-        "semanas/SEMANA 2/Actividad 02.pdf", // Semana 2
+        "semanas/SEMANA_2/Actividad02.pdf", // Semana 2
         "semanas/SEMANA_3/Actividad03.pdf", // Semana 3
         "semanas/SEMANA_4/Actividad04.pdf", // Semana 4
         "semanas/SEMANA_5/Actividad05.pdf", // Semana 5
@@ -68,8 +68,9 @@ document.addEventListener("DOMContentLoaded", function() {
             <td>Semana ${week}</td>
             <td>${descripciones[week - 1]}</td>
             <td>
-                <a href="${pdfFiles[week - 1]}" target="_blank">Ver PDF</a>
+                <button class="button-view" onclick="togglePDF(${week})">Ver PDF</button>
                 <button class="button-download" onclick="downloadPDF(${week})">Descargar PDF</button>
+                <iframe id="pdfFrame${week}" class="pdf-frame" style="display: none;" src=""></iframe>
             </td>
             <td>
                 <div class="complementary-files" id="complementaryFiles${week}"></div>
@@ -92,6 +93,20 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+// Función para mostrar u ocultar el PDF
+function togglePDF(week) {
+    const pdfFrame = document.getElementById(`pdfFrame${week}`);
+    const pdfFile = pdfFiles[week - 1];
+
+    if (pdfFrame.style.display === "none") {
+        pdfFrame.src = pdfFile; // Establecer la fuente del iframe
+        pdfFrame.style.display = "block"; // Mostrar el iframe
+    } else {
+        pdfFrame.style.display = "none"; // Ocultar el iframe
+        pdfFrame.src = ""; // Limpiar la fuente del iframe
+    }
+}
+
 // Funciones de descarga
 function downloadPDF(week) {
     const link = document.createElement("a");
@@ -108,5 +123,4 @@ function downloadComplementaryFiles(week) {
         link.click();
     });
 }
-
 
