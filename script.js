@@ -13,32 +13,31 @@ document.addEventListener("DOMContentLoaded", function() {
         // Continúa hasta la semana 16
     ];
 
-    // Archivos PDF y complementarios
+    // Rutas relativas para cada PDF y archivo complementario
     const pdfFiles = [
         "./semanas/SEMANA_1/Actividad01.pdf",
         "./semanas/SEMANA_2/Actividad02.pdf",
         "./semanas/SEMANA_3/Actividad03.pdf",
-        // Agrega las rutas correctas para cada semana
+        // Continúa con las rutas correctas para cada semana
     ];
 
     const complementaryFiles = [
         ["./complementarios/complementario1.zip"],
         ["./complementarios/complementario2.zip"],
         ["./complementarios/complementario3.zip"],
-        // Agrega las rutas correctas para cada archivo complementario
+        // Continúa con las rutas correctas para cada archivo complementario
     ];
 
-    // Generación dinámica de filas
-    for (let week = 1; week <= 6; week++) {
+    // Generar las filas de la tabla dinámicamente
+    for (let week = 1; week <= 16; week++) {
         const row = document.createElement("tr");
 
         row.innerHTML = `
             <td>Semana ${week}</td>
             <td>${descripciones[week - 1] || "Descripción no disponible"}</td>
             <td>
-                <button class="button-view" onclick="togglePDF(${week})">Ver PDF</button>
+                <a href="${pdfFiles[week - 1]}" target="_blank">Ver PDF</a>
                 <button class="button-download" onclick="downloadPDF(${week})">Descargar PDF</button>
-                <iframe id="pdfFrame${week}" class="pdf-frame" style="display: none;"></iframe>
             </td>
             <td>
                 <div class="complementary-files" id="complementaryFiles${week}"></div>
@@ -46,13 +45,13 @@ document.addEventListener("DOMContentLoaded", function() {
             </td>
         `;
 
-        // Añadir archivos complementarios
+        // Añadir enlaces de descarga para los complementarios
         const complementaryDiv = row.querySelector(`#complementaryFiles${week}`);
         complementaryFiles[week - 1]?.forEach(file => {
             const link = document.createElement("a");
             link.href = file;
             link.target = "_blank";
-            link.textContent = file.split('/').pop();
+            link.textContent = file.split('/').pop(); // Muestra solo el nombre del archivo
             complementaryDiv.appendChild(link);
             complementaryDiv.appendChild(document.createElement("br"));
         });
@@ -61,39 +60,21 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-// Mostrar PDF en iframe
-function togglePDF(week) {
-    const pdfFrame = document.getElementById(`pdfFrame${week}`);
-    const pdfFile = pdfFiles[week - 1];
-
-    if (pdfFrame.style.display === "none") {
-        pdfFrame.src = pdfFile;
-        pdfFrame.style.display = "block";
-    } else {
-        pdfFrame.style.display = "none";
-        pdfFrame.src = "";
-    }
-}
-
-// Descargar PDF
+// Descargar el PDF
 function downloadPDF(week) {
     const link = document.createElement("a");
     link.href = pdfFiles[week - 1];
     link.download = `Semana_${week}.pdf`;
-    document.body.appendChild(link);
     link.click();
-    document.body.removeChild(link);
 }
 
-// Descargar complementarios
+// Descargar los complementarios
 function downloadComplementaryFiles(week) {
     complementaryFiles[week - 1]?.forEach((file, index) => {
         const link = document.createElement("a");
         link.href = file;
         link.download = `Complementario_Semana_${week}_${index + 1}_${file.split('/').pop()}`;
-        document.body.appendChild(link);
         link.click();
-        document.body.removeChild(link);
     });
 }
 
