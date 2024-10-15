@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
     ];
 
     // Generación dinámica de filas
-    for (let week = 1; week <= 16; week++) {
+    for (let week = 1; week <= 6; week++) {
         const row = document.createElement("tr");
 
         row.innerHTML = `
