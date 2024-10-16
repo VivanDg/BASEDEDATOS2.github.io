@@ -74,11 +74,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Descargar el PDF
 function downloadPDF(week) {
-    const link = document.createElement("a");
-    link.href = pdfDown[week - 1];
-    link.download = `Actividad_${week}.pdf`;
-    link.click();
-}
+        const link = document.createElement("a");
+        link.href = pdfDown[week - 1];
+        link.download = `Actividad_${week}.pdf`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
 
 // Descargar los complementarios
 function downloadComplementaryFiles(week) {
