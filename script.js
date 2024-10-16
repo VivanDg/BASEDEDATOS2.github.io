@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         tasksTable.appendChild(row);
     }
-});
+
 
 // Descargar el PDF
 function downloadPDF(week) {
@@ -91,4 +91,4 @@ function downloadComplementaryFiles(week) {
         link.click();
     });
 }
-
+});
