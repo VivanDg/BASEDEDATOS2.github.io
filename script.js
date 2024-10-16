@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <td>${descripciones[week - 1] || "Descripción no disponible"}</td>
             <td>
                 <a href="${pdfFiles[week - 1]}" target="_blank">Ver PDF</a>
-                <button class="button-download" onclick="downloadPDF(${week})"><a>Descargar PDF</a></button>
+                <a class="button-download" onclick="downloadPDF(${week})">Descargar PDF</a>
             </td>
             <td>
                 <div class="complementary-files" id="complementaryFiles${week}"></div>
