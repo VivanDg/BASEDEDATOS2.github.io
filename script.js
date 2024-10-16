@@ -23,6 +23,16 @@ document.addEventListener("DOMContentLoaded", function() {
         "./semanas/SEMANA_6/Actividad6.pdf",
         
     ];
+    const pdfDown = [
+        "./semanas/SEMANA_1/Actividad1.pdf",
+        "./semanas/SEMANA_2/Actividad2.pdf",
+        "./semanas/SEMANA_3/Actividad3.pdf",
+        "./semanas/SEMANA_4/Actividad4.pdf",
+        "./semanas/SEMANA_5/Actividad5.pdf",
+        "./semanas/SEMANA_6/Actividad6.pdf",
+
+        
+    ];
 
     const complementaryFiles = [
         
@@ -38,11 +48,13 @@ document.addEventListener("DOMContentLoaded", function() {
             <td>${descripciones[week - 1] || "Descripción no disponible"}</td>
             <td>
                 <a href="${pdfFiles[week - 1]}" target="_blank">Ver PDF</a>
-                <a class="button-download" onclick="downloadPDF(${week})">Descargar PDF</a>
+                <a href="${pdfDown[week - 1]}" class="button-download" onclick="downloadPDF(${week})">Descargar PDF</a>
+
             </td>
             <td>
+            downloadComplementaryFiles(${week})
                 <div class="complementary-files" id="complementaryFiles${week}"></div>
-                <button class="button-download" onclick="downloadComplementaryFiles(${week})">Descargar Complementarios</button>
+                <a href="#" class="button-download" onclick="downloadComplementaryFiles(${week})">Descargar Complementarios</a>
             </td>
         `;
 
@@ -64,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // Descargar el PDF
 function downloadPDF(week) {
     const link = document.createElement("a");
-    link.href = pdfFiles[week - 1];
+    link.href = pdfDown[week - 1];
     link.download = `Actividad_${week}.pdf`;
     link.click();
 }
