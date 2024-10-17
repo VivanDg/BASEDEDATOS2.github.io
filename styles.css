@@ -80,3 +80,42 @@ td a:hover {
     margin-top: 15px;
 }
 
+/* Estilo general para los enlaces dentro de la tabla */
+table#tasksTable a {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 5px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff; /* Color de fondo del botón */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Cambia el color del enlace al pasar el ratón */
+table#tasksTable a:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el ratón */
+}
+
+/* Añade más espaciado entre las filas de la tabla */
+table#tasksTable tbody tr {
+    height: 60px; /* Ajusta la altura de cada fila */
+}
+
+/* Estilo para las celdas con botones, agregando espacio */
+table#tasksTable td {
+    padding: 10px;
+    vertical-align: middle;
+}
+
+/* Personaliza el aspecto de los botones de descarga */
+.button-download {
+    background-color: #28a745; /* Color verde para los botones de descarga */
+    margin-left: 10px;
+}
+
+.button-download:hover {
+    background-color: #218838; /* Cambia a un verde más oscuro al pasar el ratón */
+}
