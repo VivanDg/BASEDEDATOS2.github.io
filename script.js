@@ -46,20 +46,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 <a href="#" class="button-download" onclick="downloadPDF(${week})">Descargar PDF</a>
             </td>
             <td>
-                <div class="complementary-files" id="complementaryFiles${week}"></div>
+               <!-- El div ya no mostrará los archivos complementarios, pero sigue ahí si es necesario -->
+                <div class="complementary-files" id="complementaryFiles${week}" style="display: none;"></div>
                 <a href="#" class="button-download" onclick="downloadComplementaryFiles(${week})">Descargar Complementarios</a>
             </td>
         `;
 
-        const complementaryDiv = row.querySelector(`#complementaryFiles${week}`);
-        complementaryFiles[week - 1]?.forEach((file) => {
-            const link = document.createElement("a");
-            link.href = file;
-            link.target = "_blank";
-            link.textContent = file.split("/").pop();
-            complementaryDiv.appendChild(link);
-            complementaryDiv.appendChild(document.createElement("br"));
-        });
+        
 
         tasksTable.appendChild(row);
     }
