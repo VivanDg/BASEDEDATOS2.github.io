@@ -30,9 +30,9 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
 
     const complementaryFiles = [
-        "./complementos/SEMANA 1/semana1.rar",
-        "./complementos/SEMANA 2/semana2.rar",
-        "./complementos/SEMANA 3/semana3.rar",
+        ["./complementos/SEMANA 1/semana1.rar"], // Cambia a un array de archivos
+        ["./complementos/SEMANA 2/semana2.rar"],
+        ["./complementos/SEMANA 3/semana3.rar"]
         // Añadir archivos complementarios para las siguientes semanas si es necesario
     ];
 
@@ -79,17 +79,17 @@ function downloadPDF(week) {
 }
 
 function downloadComplementaryFiles(week) {
-    // Usar la variable complementaryFiles definida en la parte superior
     const complementaryFiles = [
-        "./complementos/SEMANA 1/semana1.rar",
-        "./complementos/SEMANA 2/semana2.rar",
-        "./complementos/SEMANA 3/semana3.rar",
-        // Añadir archivos complementarios para más semanas
+        ["./complementos/SEMANA 1/semana1.rar"], // Cambia a un array de archivos
+        ["./complementos/SEMANA 2/semana2.rar"],
+        ["./complementos/SEMANA 3/semana3.rar"],
+        // Añadir más arrays de archivos para más semanas si es necesario
     ];
 
     // Validar si hay archivos complementarios para la semana seleccionada
-    if (complementaryFiles[week - 1]) {
-        complementaryFiles[week - 1].forEach((file, index) => {
+    const files = complementaryFiles[week - 1];
+    if (files) {
+        files.forEach((file, index) => {
             const link = document.createElement("a");
             link.href = file;
             link.download = `Complementario_Semana_${week}_${index + 1}_${file.split("/").pop()}`;
