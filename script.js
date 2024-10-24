@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ["complementos/SEMANA 1/semana1.rar"],
         ["complementos/SEMANA 2/semana2.rar"],
         ["complementos/SEMANA 3/semana3.rar"],
+        // Añadir archivos complementarios para las siguientes semanas si es necesario
     ];
 
     for (let week = 1; week <= 16; week++) {
@@ -51,8 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 <a href="#" class="button-download" onclick="downloadComplementaryFiles(${week})">Descargar Complementarios</a>
             </td>
         `;
-
-        
 
         tasksTable.appendChild(row);
     }
@@ -80,15 +79,25 @@ function downloadPDF(week) {
 }
 
 function downloadComplementaryFiles(week) {
+    // Usar la variable complementaryFiles definida en la parte superior
     const complementaryFiles = [
-        // Aquí define archivos complementarios específicos para cada semana
+        ["complementos/SEMANA 1/semana1.rar"],
+        ["complementos/SEMANA 2/semana2.rar"],
+        ["complementos/SEMANA 3/semana3.rar"],
+        // Añadir archivos complementarios para más semanas
     ];
-    complementaryFiles[week - 1]?.forEach((file, index) => {
-        const link = document.createElement("a");
-        link.href = file;
-        link.download = `Complementario_Semana_${week}_${index + 1}_${file.split("/").pop()}`;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    });
+
+    // Validar si hay archivos complementarios para la semana seleccionada
+    if (complementaryFiles[week - 1]) {
+        complementaryFiles[week - 1].forEach((file, index) => {
+            const link = document.createElement("a");
+            link.href = file;
+            link.download = `Complementario_Semana_${week}_${index + 1}_${file.split("/").pop()}`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    } else {
+        console.error("Archivos complementarios no disponibles para la semana:", week);
+    }
 }
