@@ -30,7 +30,9 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
 
     const complementaryFiles = [
-        // Archivos complementarios para cada semana
+        ["complementos/SEMANA 1/semana1.rar"],
+        ["complementos/SEMANA 2/semana2.rar"],
+        ["complementos/SEMANA 3/semana3.rar"],
     ];
 
     for (let week = 1; week <= 16; week++) {
