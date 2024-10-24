@@ -30,9 +30,9 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
 
     const complementaryFiles = [
-        ["complementos/SEMANA 1/semana1.rar"],
-        ["complementos/SEMANA 2/semana2.rar"],
-        ["complementos/SEMANA 3/semana3.rar"],
+        "./complementos/SEMANA 1/semana1.rar",
+        "./complementos/SEMANA 2/semana2.rar",
+        "./complementos/SEMANA 3/semana3.rar",
         // Añadir archivos complementarios para las siguientes semanas si es necesario
     ];
 
@@ -81,9 +81,9 @@ function downloadPDF(week) {
 function downloadComplementaryFiles(week) {
     // Usar la variable complementaryFiles definida en la parte superior
     const complementaryFiles = [
-        ["complementos/SEMANA 1/semana1.rar"],
-        ["complementos/SEMANA 2/semana2.rar"],
-        ["complementos/SEMANA 3/semana3.rar"],
+        "./complementos/SEMANA 1/semana1.rar",
+        "./complementos/SEMANA 2/semana2.rar",
+        "./complementos/SEMANA 3/semana3.rar",
         // Añadir archivos complementarios para más semanas
     ];
 
